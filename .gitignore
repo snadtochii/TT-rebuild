@@ -1,0 +1,29 @@
+# dependencies
+/node_modules
+
+# compiled frontend
+/public
+
+# logs
+*.log
+
+#ssl
+/ssl
+
+# IDEs and editors
+/.idea
+/.vscode
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+
+# third-party libs
+/angular-src/src/libs
+configs/config.js
+angular-src/src/app/core/env.config.ts
+angular-src/src/app/auth/auth.config.ts
+angular-src/src/assets/js/Chart.bundle.min.js
+angular-src/src/assets/js/materialize.min.js
+angular-src/src/assets/css/material-icon.css

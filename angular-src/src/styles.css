@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+body, html{
+    height: 100%;
+}
+app-root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.row{
+    margin-bottom: 0;
+}
+
+.main-text{
+    color: #4db6ac;
+    font-size: 24px;
+}
+.main-cards .card-title{
+    font-size: 32px;
+}
+.datepicker-custom{
+    padding: 25px 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+
+/* ALERT MESSAGES*/
+.alert {
+    padding: 0 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}

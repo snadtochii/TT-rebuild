@@ -1,0 +1,9 @@
+nav a{
+    text-decoration: none;
+}
+nav a:hover, nav a:active, nav a:focus {
+    color: #fff;
+}
+.nav-wrapper{
+    padding-left: 40px;
+}

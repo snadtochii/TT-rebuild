@@ -1,0 +1,15 @@
+<nav>
+  <div class="nav-wrapper teal lighten-2"> <!--blue-grey darken-3">-->
+    <a href="#" class="brand-logo">Time Tracker</a>
+    <ul class="right hide-on-med-and-down">
+      <li *ngIf="authService.logedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/dashboard']">Dashboard</a></li>
+      <!--<li *ngIf="authService.logedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/details']">Daily Details</a></li>-->
+      <li *ngIf="authService.logedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/statistics']">Statistics</a></li>      
+      <li *ngIf="authService.logedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/profile']">Profile</a></li>
+
+      <li *ngIf="!authService.logedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/login']">Login</a></li>
+      <li *ngIf="!authService.logedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/register']">Register</a></li>
+      <li *ngIf="authService.logedIn()"><a (click)="onLogOutClick()" href="#">Logout</a></li>
+    </ul>
+  </div>
+</nav>

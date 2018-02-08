@@ -1,0 +1,28 @@
+thead {
+    border-bottom: 1px solid #9e9e9e;
+}
+
+table .last-row{
+    border-top: 1px solid #9e9e9e;
+}
+
+table .table-sub-header{
+    max-width: 60px;
+}
+
+.main-text{
+    font-size: 32px;
+    line-height: 32px;
+}
+.switch-container{
+    margin-top: 3px;
+}
+ .datepicker-custom{
+    padding: 25px 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.tabs {
+    overflow-x: hidden;
+}

@@ -1,0 +1,120 @@
+<div class="container">
+  <div class="row">
+    <!--<div *ngIf="isLoading" class="progress">
+      <div class="indeterminate"></div>
+    </div>-->
+    <div class="card main-cards">
+      <div class="card-content">
+        <div class="row">
+          <div class="col left">
+            <span class="card-title">Time Statistics</span>
+          </div>
+          <div class="col right switch-container" *ngIf="totalWeeklyTime">
+            <div class="switch">
+              <label>MM
+              <input type="checkbox" name="isHours" [(ngModel)]="isHours" (change)="updateTime()">
+              <span class="lever"></span>
+            HH
+            </label>
+            </div>
+          </div>
+          <div class="col right" *ngIf="totalWeeklyTime">
+            <span class="main-text">{{totalWeeklyTime}}/{{standardWeeklyTime}}</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <input type="date" class="datepicker hoverable datepicker-custom" materialize="pickadate" [ngModel]="datePick" (ngModelChange)="onDateChange($event)">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <div class="card-tabs">
+              <ul class="tabs tabs-fixed-width" materialize="tabs">
+                <li class="tab"><a class="active teal-text text-lighten-2" href="#table-tab">Table</a></li>
+                <li class="tab"><a class="teal-text text-lighten-2" href="#chart-tab">Chart</a></li>
+                <div class="indicator teal lighten-2"></div>
+              </ul>
+            </div>
+            <div class="card-content">
+              <div id="table-tab">
+                <div *ngIf="weeklyTime">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngIf="weeklyTimeImagesQCSynthes">
+                        <td class="table-sub-header">ImQC Synthes</td>
+                        <td *ngFor="let time of weeklyTimeImagesQCSynthes">{{time}}</td>
+                      </tr>
+                      <tr *ngIf="weeklyTimeImagesQCObl">
+                        <td class="table-sub-header">ImQC Obl</td>
+                        <td *ngFor="let time of weeklyTimeImagesQCObl">{{time}}</td>
+                      </tr>
+                      <tr *ngIf="weeklyTimeImagesQCSurgicase">
+                        <td class="table-sub-header">ImQC Surgicase</td>
+                        <td *ngFor="let time of weeklyTimeImagesQCSurgicase">{{time}}</td>
+                      </tr>
+                      <tr *ngIf="weeklyTimeImagesQCShoulder">
+                        <td class="table-sub-header">ImQC Shoulder</td>
+                        <td *ngFor="let time of weeklyTimeImagesQCShoulder">{{time}}</td>
+                      </tr>
+                      <tr *ngIf="weeklyTimeImagesQCOther">
+                        <td class="table-sub-header">ImQC Other</td>
+                        <td *ngFor="let time of weeklyTimeImagesQCOther">{{time}}</td>
+                      </tr>
+                      <tr *ngIf="weeklyTimeCE">
+                        <td class="table-sub-header">CE</td>
+                        <td *ngFor="let time of weeklyTimeCE">{{time}}</td>
+                      </tr>
+                      <tr *ngIf="weeklyTimeOblCE">
+                        <td class="table-sub-header">CE OBL</td>
+                        <td *ngFor="let time of weeklyTimeOblCE">{{time}}</td>
+                      </tr>
+                      <tr *ngIf="weeklyTimeQE">
+                        <td class="table-sub-header">QE</td>
+                        <td *ngFor="let time of weeklyTimeQE">{{time}}</td>
+                      </tr>
+                      <tr *ngIf="weeklyTimeOblQE">
+                        <td class="table-sub-header">QE OBL</td>
+                        <td *ngFor="let time of weeklyTimeOblQE">{{time}}</td>
+                      </tr>
+                      <tr *ngIf="weeklyTimeTasks">
+                        <td class="table-sub-header">Other Tasks</td>
+                        <td *ngFor="let time of weeklyTimeTasks">{{time}}</td>
+                      </tr>
+                      <tr class="last-row">
+                        <td class="table-sub-header">Total</td>
+                        <td *ngFor="let time of weeklyTime">{{time}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div *ngIf="(!isLoading && !weeklyTime)">
+                  There is nothing to show for this date..
+                </div>
+              </div>
+              <div id="chart-tab">
+                <app-chart [dataToChart]="weekToChart" *ngIf="weeklyTime"></app-chart>
+                <div *ngIf="(!isLoading && !weeklyTime)">
+                  There is nothing to show for this date..
+                </div>
+              </div>
+              <a [routerLink]="['../tasks']" class="btn-flat right">show tasks</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

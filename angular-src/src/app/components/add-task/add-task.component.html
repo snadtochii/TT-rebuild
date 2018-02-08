@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="card main-cards">
+      <div class="card-content">
+        <div class="row">
+          <div class="col">
+            <span class="card-title">Add Task</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <form class="card-content" #form="ngForm" (ngSubmit)="addTask(form)">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="task_title" type="text" required ngModel name="title">
+                  <label for="task_title">Title <span class="red-text">*</span></label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea id="task_descrition" class="materialize-textarea" ngModel name="description"></textarea>
+                  <label for="task_descrition">Descrition</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="time" type="number" ngModel name="time">
+                  <label for="time">Time spent, mm <span class="red-text">*</span></label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12">
+                  <input required type="date" placeholder="Choose date" class="datepicker datepicker-custom" materialize="pickadate" [materializeParams]="params"
+                    [(ngModel)]="datePick" name="date">
+                </div>
+              </div>
+              <button class="btn-flat waves-effect waves-light right" type="submit" name="action">Add</button>
+              <button [routerLink]="['../']" class="btn-flat right">show tasks</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

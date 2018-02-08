@@ -1,0 +1,29 @@
+{
+  "name": "mean",
+  "version": "1.0.0",
+  "description": "mean tracker",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app",
+    "start-v2": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.4",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "express-jwt": "^5.3.0",
+    "express-session": "^1.15.6",
+    "fs-extra": "^5.0.0",
+    "helmet": "^3.9.0",
+    "jwks-rsa": "^1.2.1",
+    "mongoose": "^4.13.0",
+    "morgan": "~1.9.0",
+    "serve-favicon": "~2.4.5"
+  },
+  "author": "Sergii Nadtochii",
+  "license": "ISC",
+  "devDependencies": {}
+}
