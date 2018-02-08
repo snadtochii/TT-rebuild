@@ -5,7 +5,7 @@ export interface DataToChart{
     options: any;
     type: string;
 }
-export interface ChartData{
-    data: number[],
-    label: string
+export interface ChartData {
+    data: number[];
+    label: string;
 }

@@ -3,7 +3,8 @@ import { Http, Headers } from '@angular/http';
 
 import { Task } from '../models';
 
-import { DataHandlersService, AuthService } from './';
+import { DataHandlersService } from './data-handlers.service';
+import { AuthService } from './auth.service';
 import { environment } from '../../environments/environment.prod';
 
 @Injectable()
@@ -12,12 +13,12 @@ export class TasksService {
   constructor(private http: Http, private dataHandlersService: DataHandlersService, private authService: AuthService) { }
 
   addTask(user, task: Task) {
-    let data = { 
+    let data = {
       username: JSON.parse(user).username,
       title: task.title,
       desc: task.description,
       time: task.time,
-      date: task.date      
+      date: task.date
     };
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');

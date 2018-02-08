@@ -4,17 +4,17 @@
       <span class="card-title">Statistics</span>
       <div class="row">
         <div class="col s12">
-          <select #filter multiple materialize="material_select" [materializeSelectOptions]="staticticsOptions.filterOptionsType" [(ngModel)]="filterType"
+          <!-- <select #filter multiple materialize="material_select" [materializeSelectOptions]="staticticsOptions.filterOptionsType" [(ngModel)]="filterType"
             (ngModelChange)="onModelChange()">
           <option value="" disabled selected>Choose case type</option>
           <option *ngFor="let option of staticticsOptions.filterOptionsType" [value]="option.value" >{{option.name}}</option>
-        </select>
+        </select> -->
         </div>
         <div class="col s12">
-          <select #filter materialize="material_select" [(ngModel)]="filterStep"  (ngModelChange)="onModelChange()">
+          <!-- <select #filter materialize="material_select" [(ngModel)]="filterStep"  (ngModelChange)="onModelChange()">
           <option value="" disabled>Choose step</option>
           <option *ngFor="let option of staticticsOptions.filterOptionsStep" [value]="option.value" [selected]="option.value===filterStep">{{option.name}}</option>
-        </select>
+        </select> -->
         </div>
       </div>
       <div class="row chart-row">
