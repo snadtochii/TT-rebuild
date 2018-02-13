@@ -31,7 +31,11 @@ export class WeeklyTimeStatisticsComponent implements OnInit {
   datePick: Date;
   selectedDate: Date;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef, private casesService: CasesService, private dataHandlersService: DataHandlersService, private authService: AuthService, private tasksService: TasksService) {
+  constructor(private changeDetectorRef: ChangeDetectorRef,
+    private casesService: CasesService,
+    private dataHandlersService: DataHandlersService,
+    private authService: AuthService,
+    private tasksService: TasksService) {
   }
 
   ngOnInit() {

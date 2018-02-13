@@ -10,7 +10,7 @@ router.get('', wrapper.wrapAsync(async (req, res, next) => {
     res.json(result);
 }));
 
-router.get('/steps', wrapper.wrapAsync(async (req, res, next) => {
+router.get('/by-date', wrapper.wrapAsync(async (req, res, next) => {
     const result = await Case.getUserCasesByDate(req.query.userId, req.query.start, req.query.end);
     res.json(result);
 }));

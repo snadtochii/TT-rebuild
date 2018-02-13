@@ -2,7 +2,12 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import * as auth0 from 'auth0-js';
-import { AUTH_CONFIG } from 'app/auth/auth.config';
+import { AUTH_CONFIG } from '../auth/auth.config';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+import { catchError } from 'rxjs/operators/catchError';
+import { error } from 'util';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AuthV2Service {
@@ -22,7 +27,7 @@ export class AuthV2Service {
 
   isAdmin: boolean;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private http: HttpClient) {
     const lsProfile = localStorage.getItem('profile');
 
     if (this.tokenValid) {
@@ -67,6 +72,7 @@ export class AuthV2Service {
         this.setSession(authResult, profile);
         this.router.navigate([localStorage.getItem('authRedirect') || '/']);
         this.clearRedirect();
+        this.storeUserData(profile).subscribe(res => console.log(res));
       } else if (err) {
         console.error(`Error authenticating: ${err.error}`);
       }
@@ -116,6 +122,11 @@ export class AuthV2Service {
   get tokenValid(): boolean {
     const expiresAt = JSON.parse(localStorage.getItem('expires_at'));
     return Date.now() < expiresAt;
+  }
+
+  storeUserData(profile) {
+    console.log(profile);
+    return this.http.post(environment.serverUrl + environment.api.users.saveUser, profile);
   }
 
 }
